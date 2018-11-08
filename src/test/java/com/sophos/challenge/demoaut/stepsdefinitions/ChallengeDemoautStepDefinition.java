@@ -1,9 +1,14 @@
 package com.sophos.challenge.demoaut.stepsdefinitions;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import org.openqa.selenium.WebDriver;
 
 import com.sophos.challenge.demoaut.models.User;
 import com.sophos.challenge.demoaut.models.repositories.UserRespository;
+import com.sophos.challenge.demoaut.questions.ResultRegister;
+import com.sophos.challenge.demoaut.tasks.ConfirmRegister;
 import com.sophos.challenge.demoaut.tasks.Login;
 import com.sophos.challenge.demoaut.tasks.OpenTheBrowser;
 import com.sophos.challenge.demoaut.tasks.RegisterWith;
@@ -13,6 +18,8 @@ import com.sophos.challenge.demoaut.util.exceptions.ReaderPropertiesFailExceptio
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
@@ -42,20 +49,25 @@ public class ChallengeDemoautStepDefinition {
 		valentino.can(BrowseTheWeb.with(browser));
 	}
 	
-	@Given("^that I opened  browser at Demoaut home page$")
+	@Given("that I opened  browser at Demoaut home page")
 	public void that_i_opened_browser_at_demoaut_home_page() throws Exception {
 		valentino.wasAbleTo(OpenTheBrowser.at(homePageDemoaut));
 	}
 	
-	@And("^I register in the application$")
+	@And("I entered the registration section and entered my credentials")
 	public void i_register_in_the_application() throws Exception {
 		valentino.wasAbleTo(RegisterWith.theCredentialsOf(userValetino));
 	}
 	
-	@And("^I input to the application$")
-	public void i_input_to_the_application() throws Exception {
-		valentino.wasAbleTo(Login.withCredencialOfUser(userValetino));
+	@When("I confirm register of the application")
+	public void i_confirm_register_to_the_application() throws Exception {
+		valentino.wasAbleTo(ConfirmRegister.ofMyUser());
 	}
 	
+	@Then("I verify if I'm truly registered")
+	public void i_verify_register() throws Exception {
+		String expected = "Note: Your user name is ".concat(userValetino.getUserInformation().getUsername()).concat(".");
+		valentino.should(seeThat(ResultRegister.is(), equalTo(expected)));
+	}
 	
 }

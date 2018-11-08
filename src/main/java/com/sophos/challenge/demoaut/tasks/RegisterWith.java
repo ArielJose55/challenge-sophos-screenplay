@@ -35,11 +35,10 @@ public class RegisterWith implements Task{
 			actor.attemptsTo(Enter.theValue(user.getMailInformation().getCity()).into(DemoautRegisterPage.INPUT_CITY));
 			actor.attemptsTo(Enter.theValue(user.getMailInformation().getProvince()).into(DemoautRegisterPage.INPUT_PROVINCE));
 			actor.attemptsTo(Enter.theValue(user.getMailInformation().getPostalCode()).into(DemoautRegisterPage.INPUT_CODE_POSTAL));
-			//actor.attemptsTo(Enter.theValue(user.getMailInformation().getCountry()).into(DemoautRegisterPage.CHOOSE_COUNTRY));
+			//actor.attemptsTo(Click.on(DemoautRegisterPage.CHOOSE_COUNTRY));
 			actor.attemptsTo(Enter.theValue(user.getUserInformation().getUsername()).into(DemoautRegisterPage.INPUT_USERNAME));
 			actor.attemptsTo(Enter.theValue(user.getUserInformation().getPassword()).into(DemoautRegisterPage.INPUT_PASSWORD));
 			actor.attemptsTo(Enter.theValue(user.getUserInformation().getPassword()).into(DemoautRegisterPage.INPUT_CONFIRM_PASSWORD));
-			//actor.attemptsTo(Click.on(DemoautRegisterPage.SUBMIT_BUTTON));
 		}catch(Exception ex) {
 			throw new NoFoundElementException("No existe o no encontro el elemento :"+ex.getMessage());
 		}
@@ -47,5 +46,5 @@ public class RegisterWith implements Task{
 
 	public static RegisterWith theCredentialsOf(User user) {		
 		return instrumented(RegisterWith.class, user);
-	}	
+	}
 }

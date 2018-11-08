@@ -23,18 +23,18 @@ public class OpenTheBrowser implements Task{
 	@Override
 	@Step("{0} goes to #OpenTheBrowser")
 	public <T extends Actor> void performAs(T actor) {
-//		int attemp = 1;
-//		while (attemp++ <= NUMBER_ATTEMPS) {
-//			try {
+		int attemp = 1;
+		while (attemp++ <= NUMBER_ATTEMPS) {
+			try {
 				actor.attemptsTo(Open.browserOn(page));
-//				break;
-//			}catch (Exception e) {
-//				if(attemp == NUMBER_ATTEMPS)
-//					throw new InitializationBrowserException("Error a cargar la pagina", e);
-//				else
-//					continue;
-//			}
-//		}
+				break;
+			}catch (Exception e) {
+				if(attemp == NUMBER_ATTEMPS)
+					throw new InitializationBrowserException("Error a cargar la pagina", e);
+				else
+					continue;
+			}
+		}
 	}
 
 	public static OpenTheBrowser at(PageObject page) {

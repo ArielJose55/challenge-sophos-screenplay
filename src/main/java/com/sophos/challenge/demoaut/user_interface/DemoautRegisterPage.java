@@ -1,5 +1,6 @@
 package com.sophos.challenge.demoaut.user_interface;
 
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class DemoautRegisterPage {
@@ -43,6 +44,4 @@ public class DemoautRegisterPage {
 	public static Target INPUT_CONFIRM_PASSWORD =  Target.the("input text field for to confirm password")
             .locatedBy("//input[@name='confirmPassword']");
 	
-	public static Target SUBMIT_BUTTON =  Target.the("submit form of register")
-            .locatedBy("//input[@name='register']");
 }
