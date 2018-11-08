@@ -5,6 +5,7 @@ public class MailInformation {
 	private String address;
 	private String city;
 	private String province;
+	private String postalCode;
 	private String country;
 	
 	public MailInformation() {
@@ -51,6 +52,14 @@ public class MailInformation {
 		this.country = country;
 	}
 
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+	
 	@Override
 	public String toString() {
 		return "MailInformation [address=" + address + ", city=" + city + ", province=" + province + ", country="

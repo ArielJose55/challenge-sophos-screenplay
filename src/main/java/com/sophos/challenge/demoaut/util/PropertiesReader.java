@@ -60,6 +60,7 @@ public class PropertiesReader {
 				mailInformation.setAddress(mailElement.getChild("address").getValue());
 				mailInformation.setCity(mailElement.getChild("city").getValue());
 				mailInformation.setProvince(mailElement.getChild("province").getValue());
+				mailInformation.setPostalCode(mailElement.getChild("postalcode").getValue());
 				mailInformation.setCountry(mailElement.getChild("country").getValue());
 				return mailInformation;
 			}

@@ -7,4 +7,6 @@ Feature: Demoaut
 
 
   Scenario: book a flight on demoaut
-    Given that I opened  browser at Demoout home page
+    Given that I opened  browser at Demoaut home page
+    And I register in the application
+    And I input to the application
