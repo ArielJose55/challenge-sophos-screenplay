@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+	<user>
+		<basicinformation>
+			<name>Valentino</name>
+			<lastname>Rossi</lastname>
+			<phone>3456677</phone>
+			<email>leyenda@rossi.com</email>
+		</basicinformation>
+		<mailinformation>
+			<address>Cll 10-12</address>
+			<city>Urbino</city>
+			<province>Pesaro</province>
+			<country>ITALY</country>
+		</mailinformation>
+		<userinformation>
+			<username>ROSSI</username>
+			<password>LEYENDA</password>
+		</userinformation>
+	</user>
+</properties>
