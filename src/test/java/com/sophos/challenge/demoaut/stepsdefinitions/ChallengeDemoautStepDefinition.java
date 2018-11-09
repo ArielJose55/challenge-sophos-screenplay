@@ -14,6 +14,9 @@ import com.sophos.challenge.demoaut.tasks.login.Login;
 import com.sophos.challenge.demoaut.tasks.login.OpenSecction;
 import com.sophos.challenge.demoaut.tasks.OpenTheBrowser;
 import com.sophos.challenge.demoaut.tasks.register.RegisterWith;
+import com.sophos.challenge.demoaut.tasks.reservation.ChooseFlight;
+import com.sophos.challenge.demoaut.tasks.reservation.ConfirmReservation;
+import com.sophos.challenge.demoaut.tasks.reservation.RegisterReservation;
 import com.sophos.challenge.demoaut.user_interface.register.DemoautHomePage;
 import com.sophos.challenge.demoaut.util.exceptions.ReaderPropertiesFailException;
 
@@ -89,14 +92,19 @@ public class ChallengeDemoautStepDefinition {
 	
 	@Given("I had the flight data to reserve")
 	public void i_had_the_flight_data_to_reserve() {
-		
+		valentino.wasAbleTo(RegisterReservation.inApplication());
+	}
+	
+	@And("I select a flight")
+	public void i_select_a_flight() {
+		valentino.wasAbleTo(ChooseFlight.amongSeveralOptions());
 	}
 	
 	@When("I make the flight reservation")
 	public void i_make_the_flight_reservation() {
-		
+		valentino.wasAbleTo(ConfirmReservation.inApplication());
 	}
-	@When("I verify the reservation")
+	@Then("I verify the reservation")
 	public void i_verify_the_reservation() {
 		
 	}

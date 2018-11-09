@@ -19,6 +19,7 @@ Feature: Demoaut
    	
  Scenario: perform a flight search
  	Given I had the flight data to reserve
+ 	And I select a flight
  	When I make the flight reservation
  	Then I verify the reservation
  	

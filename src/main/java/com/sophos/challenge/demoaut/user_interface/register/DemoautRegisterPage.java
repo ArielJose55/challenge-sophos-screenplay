@@ -1,9 +1,9 @@
 package com.sophos.challenge.demoaut.user_interface.register;
 
-import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class DemoautRegisterPage {
+public class DemoautRegisterPage extends PageObject{
 	
 	public static Target REGISTER_BUTTON = Target.the("Register button")
             .locatedBy("//a[text()='REGISTER']");
