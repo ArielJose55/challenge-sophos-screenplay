@@ -62,6 +62,8 @@ public class DemoautReservationPage  extends PageObject{
 	
 	
 	public WebElementFacade selectDropdownValues(int element) {
+		if(element == 1)
+			return webElements.get(element).selectByIndex(0);
 		return webElements.get(element).selectByIndex(2);
 	}
 	

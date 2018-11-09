@@ -9,6 +9,7 @@ import com.sophos.challenge.demoaut.models.User;
 import com.sophos.challenge.demoaut.models.repositories.UserRespository;
 import com.sophos.challenge.demoaut.questions.ResultLogin;
 import com.sophos.challenge.demoaut.questions.ResultRegister;
+import com.sophos.challenge.demoaut.questions.ResultReservation;
 import com.sophos.challenge.demoaut.tasks.register.ConfirmRegister;
 import com.sophos.challenge.demoaut.tasks.login.Login;
 import com.sophos.challenge.demoaut.tasks.login.OpenSecction;
@@ -106,7 +107,7 @@ public class ChallengeDemoautStepDefinition {
 	}
 	@Then("I verify the reservation")
 	public void i_verify_the_reservation() {
-		
+		valentino.should(seeThat(ResultReservation.isElementoDispleyed(), equalTo(Boolean.TRUE)));
 	}
 	
 }

@@ -16,4 +16,8 @@ public class ConfirmReservationPage {
 	
 	public static Target PURCHASE =  Target.the("Input text field for the email")
             .locatedBy("//input[@name='buyFlights' and @type='image']");
+	
+	public static Target LABEL_CONFIRMATION =  Target.the("label the confirmation")
+            .locatedBy("//img[@src='/images/forms/home.gif']");
+	
 }
