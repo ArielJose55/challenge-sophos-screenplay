@@ -1,4 +1,4 @@
-package com.sophos.challenge.demoaut.user_interface;
+package com.sophos.challenge.demoaut.user_interface.register;
 
 import net.serenitybdd.screenplay.targets.Target;
 

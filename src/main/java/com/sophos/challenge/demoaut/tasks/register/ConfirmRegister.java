@@ -1,8 +1,8 @@
-package com.sophos.challenge.demoaut.tasks;
+package com.sophos.challenge.demoaut.tasks.register;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import com.sophos.challenge.demoaut.user_interface.DemoautConfirmRegister;
+import com.sophos.challenge.demoaut.user_interface.register.DemoautConfirmRegister;
 import com.sophos.challenge.demoaut.util.exceptions.NoFoundElementException;
 
 import net.serenitybdd.screenplay.Actor;
