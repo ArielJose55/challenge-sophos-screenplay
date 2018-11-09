@@ -1,6 +1,6 @@
 package com.sophos.challenge.demoaut.questions;
 
-import com.sophos.challenge.demoaut.user_interface.DemoautConfirmRegister;
+import com.sophos.challenge.demoaut.user_interface.register.DemoautConfirmRegister;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

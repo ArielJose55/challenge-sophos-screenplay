@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 
 import com.sophos.challenge.demoaut.models.User;
 import com.sophos.challenge.demoaut.models.repositories.UserRespository;
+import com.sophos.challenge.demoaut.questions.ResultLogin;
 import com.sophos.challenge.demoaut.questions.ResultRegister;
-import com.sophos.challenge.demoaut.tasks.ConfirmRegister;
-import com.sophos.challenge.demoaut.tasks.Login;
+import com.sophos.challenge.demoaut.tasks.register.ConfirmRegister;
+import com.sophos.challenge.demoaut.tasks.login.Login;
+import com.sophos.challenge.demoaut.tasks.login.OpenSecction;
 import com.sophos.challenge.demoaut.tasks.OpenTheBrowser;
-import com.sophos.challenge.demoaut.tasks.RegisterWith;
-import com.sophos.challenge.demoaut.user_interface.DemoautHomePage;
+import com.sophos.challenge.demoaut.tasks.register.RegisterWith;
+import com.sophos.challenge.demoaut.user_interface.register.DemoautHomePage;
 import com.sophos.challenge.demoaut.util.exceptions.ReaderPropertiesFailException;
 
 import cucumber.api.java.Before;
@@ -68,6 +70,35 @@ public class ChallengeDemoautStepDefinition {
 	public void i_verify_register() throws Exception {
 		String expected = "Note: Your user name is ".concat(userValetino.getUserInformation().getUsername()).concat(".");
 		valentino.should(seeThat(ResultRegister.is(), equalTo(expected)));
+	}
+	
+	@Given("I went to the page section login")
+	public void i_went_to_the_page_login() {
+		valentino.wasAbleTo(OpenSecction.theLogin());
+	}
+	
+	@When("I input my credentials")
+	public void i_input_my_credentials() {
+		valentino.wasAbleTo(Login.withCredencialOfUser(userValetino));
+	}
+	
+	@Then("the reserve flight section appeared")
+	public void the_reserve_flight_section_appeared() {
+		valentino.should(seeThat(ResultLogin.isElementoDispleyed(), equalTo(Boolean.TRUE)));
+	}
+	
+	@Given("I had the flight data to reserve")
+	public void i_had_the_flight_data_to_reserve() {
+		
+	}
+	
+	@When("I make the flight reservation")
+	public void i_make_the_flight_reservation() {
+		
+	}
+	@When("I verify the reservation")
+	public void i_verify_the_reservation() {
+		
 	}
 	
 }
